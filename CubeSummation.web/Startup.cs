@@ -29,6 +29,11 @@ namespace CubeSummation.web
         {
             // Add framework services.
             services.AddMvc();
+
+            // Add application services.
+            services.AddTransient<Services.ICubeService, Services.CubeService>();
+            services.AddTransient<Repositories.ICubeRepository, Repositories.CubeRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CubeSummation.web.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,9 +8,9 @@ namespace CubeSummation.web.Services
 {
     public class CubeService : ICubeService
     {
-        private ICubeService _repository;
+        private ICubeRepository _repository;
 
-        public CubeService(ICubeService _repository)
+        public CubeService(ICubeRepository _repository)
         {
             this._repository = _repository;
         }

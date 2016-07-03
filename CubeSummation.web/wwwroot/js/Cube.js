@@ -2,6 +2,7 @@
 
     ProcessInput: function() {
         
+        $("#resultPanel").remove();
 
         // setup some local variables
         var $form = $(this);
@@ -31,8 +32,12 @@
         request.done(function (response, textStatus, jqXHR) {
             // Log a message to the console
             console.log("Hooray, it worked!");
+            var resultHtml = '<div id="resultPanel" class="panel panel-success"> <div class="panel-heading"> <h3 class="panel-title">Process Finished</h3> </div> <div class="panel-body"> ' + response + ' </div> </div>';
+            $("#result").append(resultHtml);
+            console.log("response: " + response);
+            
         });
-
+        
         // Callback handler that will be called on failure
         request.fail(function (jqXHR, textStatus, errorThrown) {
             // Log the error to the console
